@@ -1,0 +1,8 @@
+<div class="col-sm-12 content new-manga-listings">
+  <div class="row">
+    <div class="col-sm-3 manga-cover-image" ng-repeat="series in newManga" style="background-image:url(http://l.mfcdn.net/store/manga/{{series.rel}}/cover.jpg)">
+      <a ui-sref="series({title: series.title})"></a>
+      <div class="overlay"><h2>{{series.title}}</h2></div>
+    </div>
+  </div>
+</div>

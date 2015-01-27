@@ -1,0 +1,12 @@
+<div class="col-sm-12 content series-info">
+	<div class="col-sm-4 series-meta">
+		<h2>{{manga.title}}</h2>
+		<img src="{{manga.image}}" alt="{{manga.title}}">
+		<p>{{manga.description}}</p>
+	</div>
+	<div class="col-sm-8 series-chapters">
+		<ul>
+			<li ng-repeat="chapter in manga.chapters" ui-sref="chapter({link: chapter.link, page: 1})">{{chapter.title}}</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="mangareader">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mangafox Reader</title>
+
+    <!-- Importing Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Component Imports -->
+    <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-icons/core-icons.html">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet/less" href="less/main.less">
+
+    <!-- Include LESS Library -->
+    <script src="js/vendor/less.js"></script>
+
+</head>
+<body ng-controller="appController" unresolved fullbleed layout vertical>
+
+  <div ng-show="app.loading" class="state-loading"><paper-spinner active></paper-spinner></div>
+
+  <core-header-panel flex>
+    <core-toolbar>
+      <a href="javascript:history.back()"><core-icon icon="arrow-back"></core-icon></a>
+    </core-toolbar>
+    <div ui-view></div>
+  </core-header-panel>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/async/lib/async.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/app-controller.js"></script>
+  <script src="js/controllers/home-controller.js"></script>
+  <script src="js/controllers/series-info-controller.js"></script>
+  <script src="js/controllers/chapter-controller.js"></script>
+  <script src="js/services/manga.js"></script>
+</body>
+</html>

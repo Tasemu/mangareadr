@@ -1,0 +1,15 @@
+{
+    "author": "Montague Monro",
+    "dependencies": {
+    },
+    "description": "Simple Node Webkit app for reading mangafox",
+    "license": "ISC",
+    "main": "index.html",
+    "name": "mangafox-reader",
+    "version": "1.0.0",
+    "window": {
+        "height": 600,
+        //"toolbar": false,
+        "width": 1000
+    }
+}
