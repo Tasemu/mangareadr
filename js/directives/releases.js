@@ -1,13 +1,12 @@
-app.factory('manga', function ($http) {
-	return {
-		getNewManga: function () {
-			$http.get("https://www.kimonolabs.com/api/35b44djg?apikey=8LwWD2Pfiy973UkykfYWeZHGkhlZUweB").
-			success(function (data) {
-				return data;
-			}).
-			error(function () {
-				console.log("Error getting new manga");
-			});
-		}
-	};
+app.directive('whenScrolled', function() {
+    return function(scope, elm, attr) {
+        var raw = elm[0];
+        
+        elm.bind('scroll', function() {
+            if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight) {
+            	console.log('scroll triggered');
+                scope.$apply(attr.whenScrolled);
+            }
+        });
+    };
 });

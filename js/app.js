@@ -16,7 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     	templateUrl: "js/views/series.html",
     	controller: "seriesInfoController"
     }).state('chapter', {
-      url: "/chapter/:link/:page",
+      url: "/chapter/:name/:link/:chapter/:page",
       templateUrl: "js/views/chapter.html",
       controller: "chapterController"
     });

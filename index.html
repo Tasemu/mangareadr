@@ -28,14 +28,20 @@
 
   <core-header-panel flex>
     <core-toolbar>
-      <a href="javascript:history.back()"><core-icon icon="arrow-back"></core-icon></a>
+      <h1>MangaReadr</h1>
+      <ul class="breadcrumbs">
+        <li><a ui-sref="home">Manga</a></li>
+        <li ng-if="app.selectedSeries"><a ui-sref="series({title: app.selectedSeries})">{{app.selectedSeries}}</a></li>
+        <li ng-if="app.selectedChapter">{{app.selectedChapter}}</li>
+      </ul>
+      <a href="javascript:history.back()" ng-show="app.state!='home'"><core-icon icon="arrow-back"></core-icon></a>
     </core-toolbar>
     <div ui-view></div>
   </core-header-panel>
 
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/async/lib/async.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="js/app.js"></script>
@@ -44,5 +50,6 @@
   <script src="js/controllers/series-info-controller.js"></script>
   <script src="js/controllers/chapter-controller.js"></script>
   <script src="js/services/manga.js"></script>
+  <script src="js/directives/releases.js"></script>
 </body>
 </html>

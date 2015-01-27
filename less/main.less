@@ -1,4 +1,55 @@
 @asphalt: #34495e;
+@clouds: #ecf0f1;
+@midnightblue: #2c3e50;
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Arvo', serif;
+}
+
+h1 {
+	font-size: 22px;
+	margin: 0;
+}
+
+core-toolbar {
+	background: @asphalt;
+	color: @clouds;
+	padding: 15px 30px;
+
+	h1, ul {
+		float: left;
+		margin-right: 30px;
+	}
+
+	core-icon {
+		float: right;
+		color: @clouds;
+	}
+
+	ul.breadcrumbs {
+		padding: 0;
+		margin: 0;
+		position: relative;
+		top: 5px;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+			margin-right: 15px;
+
+			a {
+				color: @clouds;
+				margin: 0;
+				padding: 0;
+
+				&:hover, &:active, &:focus {
+					text-decoration: none;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
 
 .state-loading {
 	position: absolute;
