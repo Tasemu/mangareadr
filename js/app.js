@@ -12,7 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "js/views/home.html",
       controller: "homeController"
     }).state('series', {
-    	url: "/series/:title",
+    	url: "/series/:link/:title",
     	templateUrl: "js/views/series.html",
     	controller: "seriesInfoController"
     }).state('chapter', {

@@ -1,7 +1,7 @@
 app.factory('manga', function ($http) {
 	return {
-		getNewManga: function (cb) {
-			$http.get("http://localhost:3000/mangas").
+		getNewManga: function (page, cb) {
+			$http.get("http://localhost:3000/mangas?page=" + page).
 			success(function (data) {
 				cb(data);
 			}).
@@ -9,18 +9,15 @@ app.factory('manga', function ($http) {
 				console.log("Error getting new manga");
 			});
 		},
-		getSeries: function (name, cb) {
+		getSeries: function (link, cb) {			
 
-			var formattedName = name.toLowerCase().replace('-', ' ').replace('\'', ' ').replace(':', '').replace('!', '').split(' ').join('_');
-
-			$http.get('http://mangafox.me/manga/' + formattedName + '/').
+			$http.get(link).
 			success(function (data) {
 				var manga = {};
 				manga.chapters = [];
 				manga.title = $(data).find('#title h1').text();
 				manga.image = $(data).find('#series_info > .cover img').attr('src');
 				manga.description = $(data).find('#title p.summary').text();
-				manga.slug = formattedName;
 				async.each($(data).find('ul.chlist'), function (element, callback) {
 
 					$(element).find('li').each(function () {
@@ -90,6 +87,15 @@ app.factory('manga', function ($http) {
 			// error(function () {
 			// 	console.log("Error getting chapter");
 			// });
+		},
+		searchManga: function (query, cb) {
+			$http.get("http://localhost:3000/mangas/search?query=" + query).
+			success(function (data) {
+				cb(data);
+			}).
+			error(function () {
+				console.log("Error getting searched manga");
+			});
 		}
 	};
 });

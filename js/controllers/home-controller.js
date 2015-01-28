@@ -1,25 +1,41 @@
-app.controller('homeController', function ($scope, manga) {
+app.controller('homeController', function ($scope, $state, manga) {
 	console.log('homeController Initialized');
 	$scope.app.selectedSeries = null;
 	$scope.app.selectedChapter = null;
 	$scope.app.state = 'home';
-	var counter = 0;
+	var page = 1;
+	var busy = false;
 
-	manga.getNewManga(function (manga) {
+	manga.getNewManga(page, function (manga) {
 		$scope.newManga = manga;
-		$scope.visibleManga = [];
 		$scope.app.loading = false;
-		$scope.loadMore();
+		page++;
 	});
 
     $scope.loadMore = function() {
-        if ($scope.newManga && $scope.newManga.length != 0) {
-        	for (var i = 0; i < 8; i++) {
-	            if (counter < $scope.newManga.length) {
-	            	$scope.visibleManga.push($scope.newManga[counter]);
-	            	counter++;
-	            }
-	        }
+        if ($scope.newManga && $scope.newManga.length != 0 && !busy) {
+        	busy = true;
+        	manga.getNewManga(page, function (manga) {
+        		$scope.newManga.push.apply($scope.newManga, manga);
+        		busy = false;
+        		page++;
+        	});
         }
     };
+
+    $scope.$on('search-reset', function () {
+    	page = 1;
+    	busy = false;
+    	manga.getNewManga(page, function (manga) {
+			$scope.newManga = manga;
+			$scope.app.loading = false;
+			page++;
+		});
+    });
+
+    $scope.$on('search-started', function(event, args) {
+    	busy = true;
+	    console.log('search received');
+	    $scope.newManga = args.results;
+	});
 });

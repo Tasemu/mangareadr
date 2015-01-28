@@ -26,6 +26,16 @@ core-toolbar {
 		color: @clouds;
 	}
 
+	.search-input {
+		background: #2d4054 !important;
+		padding: 0px 10px !important;
+		float: right;
+		width: 150px !important;
+		position: relative;
+		top: 2px;
+		margin-left: 5px !important;
+	}
+
 	ul.breadcrumbs {
 		padding: 0;
 		margin: 0;
@@ -60,12 +70,13 @@ core-toolbar {
 	background: @asphalt;
 	z-index: 100;
 
-	paper-spinner {
+	> img {
+		width: 220px;
 		position: absolute;
+		display: block;
 		top: 50%;
 		left: 50%;
-		transform: translateX(-50%);
-		transform: translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
 	}
 }
 

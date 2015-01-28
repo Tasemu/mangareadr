@@ -19,6 +19,7 @@
     "core-header-panel": "Polymer/core-header-panel#~0.5.4",
     "angular-ui-router": "~0.2.13",
     "async": "~0.9.2",
-    "core-iconset": "Polymer/core-iconset#~0.5.4"
+    "core-iconset": "Polymer/core-iconset#~0.5.4",
+    "core-input": "Polymer/core-input#~0.5.4"
   }
 }
