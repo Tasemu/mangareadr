@@ -96,6 +96,15 @@ app.factory('manga', function ($http) {
 			error(function () {
 				console.log("Error getting searched manga");
 			});
+		},
+		addView: function (id) {
+			$http.get("http://localhost:3000/manga/viewed?id=" + id).
+			success(function (data) {
+				console.log("View added successfully");
+			}).
+			error(function () {
+				console.log("Error adding view to manga");
+			});
 		}
 	};
 });

@@ -34,10 +34,12 @@
       <h1>MangaReadr</h1>
       <ul class="breadcrumbs">
         <li><a ui-sref="home">Manga</a></li>
-        <li ng-if="app.selectedSeries"><a ui-sref="series({link: app.selectedSeriesLink})">{{app.selectedSeries}}</a></li>
+        <li ng-if="app.selectedSeries"><a ui-sref="series({link: app.selectedSeriesLink, title: app.selectedSeries})">{{app.selectedSeries}}</a></li>
         <li ng-if="app.selectedChapter">{{app.selectedChapter}}</li>
       </ul>
-      <form ng-submit="search()"><input is="core-input" ng-model="app.query" class="search-input"></form><core-icon icon="search"></core-icon>
+      <form ng-submit="search()"><input is="core-input" ng-model="app.query" class="search-input"></form>
+      <core-icon ng-click="resetSearch()" icon="clear" ng-if="app.query != ''"></core-icon>
+      <core-icon icon="search"></core-icon>
       <a href="javascript:history.back()" ng-show="app.state!='home'"><core-icon icon="arrow-back"></core-icon></a>
     </core-toolbar>
     <div ui-view></div>

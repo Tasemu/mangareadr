@@ -6,6 +6,9 @@ app.controller('seriesInfoController', function ($scope, $state, $stateParams, m
 	$scope.app.selectedSeriesLink = $stateParams.link;
 	$scope.app.state = 'series';
 	$scope.manga = {};
+
+	manga.addView($stateParams.id);
+
 	manga.getSeries($stateParams.link, function (manga) {
 		$scope.app.loading = false;
 		$scope.manga = manga;

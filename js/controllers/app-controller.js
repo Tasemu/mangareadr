@@ -5,6 +5,12 @@ app.controller('appController', function ($scope, $rootScope, $state, manga) {
 	$scope.app.breadcrumbs = [];
 	$scope.app.query = '';
 
+	$scope.resetSearch = function () {
+		$rootScope.$broadcast('search-reset');
+		$scope.app.loading = false;
+		$scope.app.query = '';
+	}
+
 	$scope.search = function () {
 		console.log("searching: " + $scope.app.query);
 		$scope.app.loading = true;
