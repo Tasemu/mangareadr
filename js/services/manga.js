@@ -57,12 +57,14 @@ app.factory('manga', function ($http) {
 
 				var pages = [];
 				var query = removeLastPart(link);
+				var j = page;
 
 				for (var i = page; i < total; i++) {
 					var full = query + "/" + i + ".html";
 					$http.get(full).
 					success(function (data) {						
-						pages.push($(data).find('img#image').attr('src'));
+						pages.push({image: $(data).find('img#image').attr('src'), page: j});
+						j++;
 						if (i == total) {							
 							cb(pages);
 						}
@@ -76,17 +78,6 @@ app.factory('manga', function ($http) {
 			error(function () {
 				console.log("Error getting page number");
 			});
-
-			// var full = query + "/" + page + ".html"
-
-			// $http.get(full).
-			// success(function (data) {
-			// 	var page = $(data).find('img#image').attr('src');
-			// 	cb(page);
-			// }).
-			// error(function () {
-			// 	console.log("Error getting chapter");
-			// });
 		},
 		searchManga: function (query, cb) {
 			$http.get("http://localhost:3000/mangas/search?query=" + query).

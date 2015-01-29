@@ -12,5 +12,6 @@ app.controller('seriesInfoController', function ($scope, $state, $stateParams, m
 	manga.getSeries($stateParams.link, function (manga) {
 		$scope.app.loading = false;
 		$scope.manga = manga;
+		$scope.app.selectedSeriesChapters = manga.chapters;
 	});
 });

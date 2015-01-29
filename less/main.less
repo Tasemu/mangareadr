@@ -70,6 +70,19 @@ core-toolbar {
 	background: @asphalt;
 	z-index: 100;
 
+	> .blur-bg {
+		box-shadow: 0 0 200px #fff;
+		background: rgba(255, 255, 255, 0.4);
+		border-radius: 50%;
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-20%) translateY(-70%);
+		width: 100px;
+		height: 100px;
+	}
+
 	> img {
 		width: 220px;
 		position: absolute;
@@ -83,3 +96,4 @@ core-toolbar {
 @import "home";
 @import "series-info";
 @import "manga-page";
+@import "chapter";
