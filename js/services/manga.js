@@ -1,7 +1,7 @@
 app.factory('manga', function ($http) {
 	return {
 		getNewManga: function (page, cb) {
-			$http.get("http://localhost:3000/mangas?page=" + page).
+			$http.get("http://107.170.235.74/mangas?page=" + page).
 			success(function (data) {
 				cb(data);
 			}).
@@ -98,7 +98,7 @@ app.factory('manga', function ($http) {
 			});
 		},
 		searchManga: function (query, cb) {
-			$http.get("http://localhost:3000/mangas/search?query=" + query).
+			$http.get("http://107.170.235.74/mangas/search?query=" + query).
 			success(function (data) {
 				cb(data);
 			}).
@@ -107,7 +107,7 @@ app.factory('manga', function ($http) {
 			});
 		},
 		addView: function (id) {
-			$http.get("http://localhost:3000/manga/viewed?id=" + id).
+			$http.get("http://107.170.235.74/manga/viewed?id=" + id).
 			success(function (data) {
 				console.log("View added successfully");
 			}).

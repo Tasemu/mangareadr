@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   // Now set up the states
   $stateProvider
     .state('home', {
-      url: "/",
+      url: "/:message",
       templateUrl: "js/views/home.html",
       controller: "homeController"
     }).state('series', {

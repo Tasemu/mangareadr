@@ -1,10 +1,15 @@
-app.controller('homeController', function ($scope, $state, manga) {
+app.controller('homeController', function ($scope, $state, manga, $stateParams) {
 	console.log('homeController Initialized');
 	$scope.app.selectedSeries = null;
 	$scope.app.selectedChapter = null;
 	$scope.app.state = 'home';
+	$scope.message = null;
 	var page = 1;
 	var busy = false;
+
+	if ($stateParams.message) {
+		$scope.message = $stateParams.message;
+	}
 
 	manga.getNewManga(page, function (manga) {
 		$scope.newManga = manga;
@@ -22,6 +27,10 @@ app.controller('homeController', function ($scope, $state, manga) {
         	});
         }
     };
+
+    $scope.removeMessage = function () {
+    	$scope.message = null;
+    }
 
     $scope.$on('search-reset', function () {
     	page = 1;

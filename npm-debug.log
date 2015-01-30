@@ -1,0 +1,129 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'update',
+1 verbose cli   '-g',
+1 verbose cli   'node-webkit-builder' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose request where is /node-webkit-builder
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id 1dac555d105f1d53
+7 verbose url raw /node-webkit-builder
+8 verbose url resolving [ 'https://registry.npmjs.org/', './node-webkit-builder' ]
+9 verbose url resolved https://registry.npmjs.org/node-webkit-builder
+10 verbose request where is https://registry.npmjs.org/node-webkit-builder
+11 info trying registry request attempt 1 at 19:19:33
+12 verbose etag "6UPWEJSNKPWQC2DPUMK6OVQV9"
+13 http GET https://registry.npmjs.org/node-webkit-builder
+14 http 200 https://registry.npmjs.org/node-webkit-builder
+15 silly registry.get cb [ 200,
+15 silly registry.get   { date: 'Fri, 30 Jan 2015 09:19:35 GMT',
+15 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+15 silly registry.get     etag: '"2MIDTUA6U2Q049V8R725YDPPI"',
+15 silly registry.get     'content-type': 'application/json',
+15 silly registry.get     'cache-control': 'max-age=60',
+15 silly registry.get     'content-length': '50573',
+15 silly registry.get     'accept-ranges': 'bytes',
+15 silly registry.get     via: '1.1 varnish',
+15 silly registry.get     age: '0',
+15 silly registry.get     'x-served-by': 'cache-syd1622-SYD',
+15 silly registry.get     'x-cache': 'MISS',
+15 silly registry.get     'x-cache-hits': '0',
+15 silly registry.get     'x-timer': 'S1422609574.033703,VS0,VE1072',
+15 silly registry.get     vary: 'Accept',
+15 silly registry.get     'keep-alive': 'timeout=10, max=50',
+15 silly registry.get     connection: 'Keep-Alive' } ]
+16 info outdated updating [ [ '/usr/local/lib',
+16 info outdated     'node-webkit-builder',
+16 info outdated     '1.0.7',
+16 info outdated     '1.0.8',
+16 info outdated     '1.0.8',
+16 info outdated     'latest' ] ]
+17 verbose install where,what [ '/usr/local/lib', [ 'node-webkit-builder@1.0.8' ] ]
+18 verbose cache add [ 'node-webkit-builder@1.0.8', null ]
+19 verbose cache add name=undefined spec="node-webkit-builder@1.0.8" args=["node-webkit-builder@1.0.8",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'node-webkit-builder@1.0.8',
+20 verbose parsed url   path: 'node-webkit-builder@1.0.8',
+20 verbose parsed url   href: 'node-webkit-builder@1.0.8' }
+21 verbose cache add name="node-webkit-builder" spec="1.0.8" args=["node-webkit-builder","1.0.8"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '1.0.8',
+22 verbose parsed url   path: '1.0.8',
+22 verbose parsed url   href: '1.0.8' }
+23 verbose addNamed [ 'node-webkit-builder', '1.0.8' ]
+24 verbose addNamed [ '1.0.8', '1.0.8' ]
+25 silly lockFile 9f276775-node-webkit-builder-1-0-8 node-webkit-builder@1.0.8
+26 verbose lock node-webkit-builder@1.0.8 /Users/montaguemonro/.npm/9f276775-node-webkit-builder-1-0-8.lock
+27 verbose request where is /node-webkit-builder
+28 verbose request registry https://registry.npmjs.org/
+29 verbose url raw /node-webkit-builder
+30 verbose url resolving [ 'https://registry.npmjs.org/', './node-webkit-builder' ]
+31 verbose url resolved https://registry.npmjs.org/node-webkit-builder
+32 verbose request where is https://registry.npmjs.org/node-webkit-builder
+33 info trying registry request attempt 1 at 19:20:12
+34 verbose etag "2MIDTUA6U2Q049V8R725YDPPI"
+35 http GET https://registry.npmjs.org/node-webkit-builder
+36 http 304 https://registry.npmjs.org/node-webkit-builder
+37 silly registry.get cb [ 304,
+37 silly registry.get   { date: 'Fri, 30 Jan 2015 09:20:13 GMT',
+37 silly registry.get     server: 'Apache',
+37 silly registry.get     via: '1.1 varnish',
+37 silly registry.get     'last-modified': 'Fri, 30 Jan 2015 09:20:13 GMT',
+37 silly registry.get     'cache-control': 'max-age=60',
+37 silly registry.get     etag: '"2MIDTUA6U2Q049V8R725YDPPI"',
+37 silly registry.get     age: '39',
+37 silly registry.get     'x-served-by': 'cache-syd1620-SYD',
+37 silly registry.get     'x-cache': 'HIT',
+37 silly registry.get     'x-cache-hits': '1',
+37 silly registry.get     'x-timer': 'S1422609613.633150,VS0,VE0',
+37 silly registry.get     vary: 'Accept',
+37 silly registry.get     'content-length': '0',
+37 silly registry.get     'keep-alive': 'timeout=10, max=50',
+37 silly registry.get     connection: 'Keep-Alive' } ]
+38 verbose etag https://registry.npmjs.org/node-webkit-builder from cache
+39 silly lockFile 60aa0de3-er-node-webkit-builder-1-0-8-tgz https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+40 verbose lock https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz /Users/montaguemonro/.npm/60aa0de3-er-node-webkit-builder-1-0-8-tgz.lock
+41 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz',
+41 verbose addRemoteTarball   '21219c0f8f3efaed449275db1beca56bdbe280a3' ]
+42 info retry fetch attempt 1 at 19:20:13
+43 verbose fetch to= /var/folders/l6/xxbrzx9532s745mzgw4dghz80000gn/T/npm-8581-nrZeqfJc/registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+44 http GET https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+45 http 200 https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+46 silly lockFile 60aa0de3-er-node-webkit-builder-1-0-8-tgz https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+47 silly lockFile 60aa0de3-er-node-webkit-builder-1-0-8-tgz https://registry.npmjs.org/node-webkit-builder/-/node-webkit-builder-1.0.8.tgz
+48 silly lockFile 9f276775-node-webkit-builder-1-0-8 node-webkit-builder@1.0.8
+49 silly lockFile 9f276775-node-webkit-builder-1-0-8 node-webkit-builder@1.0.8
+50 error Error: EACCES, mkdir '/Users/montaguemonro/.npm/node-webkit-builder/1.0.8'
+50 error  { [Error: EACCES, mkdir '/Users/montaguemonro/.npm/node-webkit-builder/1.0.8']
+50 error   errno: 3,
+50 error   code: 'EACCES',
+50 error   path: '/Users/montaguemonro/.npm/node-webkit-builder/1.0.8' }
+51 error Please try running this command again as root/Administrator.
+52 error System Darwin 13.1.0
+53 error command "/usr/local/bin/node" "/usr/local/bin/npm" "update" "-g" "node-webkit-builder"
+54 error cwd /Users/montaguemonro/nwjs-v0.12.0-alpha2-osx-x64/apps/mangareader
+55 error node -v v0.10.33
+56 error npm -v 1.4.28
+57 error path /Users/montaguemonro/.npm/node-webkit-builder/1.0.8
+58 error code EACCES
+59 error errno 3
+60 error stack Error: EACCES, mkdir '/Users/montaguemonro/.npm/node-webkit-builder/1.0.8'
+61 verbose exit [ 3, true ]
