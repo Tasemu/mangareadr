@@ -53,26 +53,44 @@ app.factory('manga', function ($http) {
 			$http.get(link).
 			success(function (data) {				
 				var num = parseInt($(data).find('.r.m .l').first().text().split(' ').pop());
-				total = num + 1;				
+				var total = num;				
 
 				var pages = [];
 				var query = removeLastPart(link);
-				var j = page;
 
-				for (var i = page; i < total; i++) {
-					var full = query + "/" + i + ".html";
-					$http.get(full).
-					success(function (data) {						
-						pages.push({image: $(data).find('img#image').attr('src'), page: j});
-						j++;
-						if (i == total) {							
-							cb(pages);
-						}
-					}).
-					error(function () {
-						console.log("Error getting chapter");
-					});
+				for (var i = page; i <= total; i++) {
+				    var full = query + "/" + i + ".html";
+				    (function(idx, full, total){
+				       $http.get(full).
+				           success(function (data) {                       
+				               pages[idx] = {image: $(data).find('img#image').attr('src'), page: idx};
+				               console.log();
+				               //assuming j is a counter for knowing when pages are loaded
+				               if (idx == total) {  
+				               	   console.log('calling cb');                         
+				                   cb(pages);
+				               }
+				           }).
+				           error(function () {
+				              console.log("Error getting chapter");
+				           });
+				    })(i, full, total);
 				}
+
+				// for (var i = page; i < total; i++) {
+				// 	var full = query + "/" + i + ".html";
+				// 	$http.get(full).
+				// 	success(function (data) {						
+				// 		pages.push({image: $(data).find('img#image').attr('src'), page: j});
+				// 		j++;
+				// 		if (i == total) {							
+				// 			cb(pages);
+				// 		}
+				// 	}).
+				// 	error(function () {
+				// 		console.log("Error getting chapter");
+				// 	});
+				// }
 
 			}).
 			error(function () {

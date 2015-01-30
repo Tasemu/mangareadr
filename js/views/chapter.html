@@ -1,5 +1,5 @@
 <!-- <a ui-sref="chapter({link: page.link, page: page.next})"><img class="page-image" src="{{page.image}}" alt=""></a> -->
 
-<img ng-repeat="img in page" class="page-image" src="{{img.image}}" alt="{{img.page}}">
+<img ng-repeat="img in page track by $index" class="page-image" src="{{img.image}}" alt="{{img.page}}">
 
 <a class="next-chapter-link" ui-sref="chapter({name: nextChapter[0].title, link: nextChapter[0].link, chapter: nextChapter[0].chapter, page: 1})"><core-icon icon="arrow-forward"></core-icon></a>
