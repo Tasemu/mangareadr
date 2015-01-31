@@ -1,6 +1,7 @@
 .new-manga-listings {
 	height: 600px;
 	overflow: auto;
+	background: @darkerthanblue;
 }
 
 .home-msg {
@@ -12,6 +13,7 @@
 		font-family: 'Arvo', serif;
 		color: @clouds;
 		margin-bottom: 0;
+		margin-top: 0;
 	}
 	core-icon {
 		position: absolute;
@@ -21,13 +23,42 @@
 		height: 15px;
 		color: @clouds;
 	}
+
+	&.ng-leave {
+		-webkit-transition: 0.1s ease-in-out all;
+		transition: 0.1s ease-in-out all;
+		height: 45px;
+	}
+
+	&.ng-leave-active {
+		height: 0;
+	}
 }
 
 .manga-cover-image {
 	height: 312px;
-	background-size: cover;
 	position: relative;
 	cursor: pointer;
+
+	&.animation {
+		&.ng-enter, &.ng-leave, &.ng-move {
+			-webkit-transition: 0.82s linear all;
+			transition: 0.82s linear all;
+			position:relative;
+		}
+
+		&.ng-enter {
+			opacity: 0;
+		}
+
+		&.ng-enter.ng-enter-active {
+			opacity: 1;
+		}
+
+		&.ng-leave.ng-leave-active {
+			opacity: 0;
+		}
+	}
 
 	&:hover {
 		.overlay {
@@ -61,5 +92,82 @@
 
 		h2 {
 		}
+	}
+}
+
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transition-delay: 0.14s;
+		transform: rotateY(180deg);
+	}
+
+.flip-container .front, .back {
+	width: 250px;
+	height: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+	margin-left: -15px;
+	margin-right: -15px;
+	height: 100%;
+	transition: 0.34s ease-in-out;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	position: relative;
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+	display: table;
+
+	.info {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 0 15px;
+	}
+
+	h2 {
+		position: relative;
+		color: @clouds;
+		margin: 0;
+		word-wrap: break-word;
+		width: 200px;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: rgba(52, 73, 94, 0.9);
 	}
 }

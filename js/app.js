@@ -1,4 +1,4 @@
-var app = angular.module('mangareader', ['ui.router']);
+var app = angular.module('mangareader', ['ui.router', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   //

@@ -9,6 +9,7 @@
 
     <!-- Importing Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
 
     <!-- Component Imports -->
     <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
@@ -24,7 +25,7 @@
 </head>
 <body ng-controller="appController" unresolved fullbleed layout vertical>
 
-  <div ng-show="app.loading" class="state-loading">
+  <div ng-show="app.loading" class="state-loading animation">
     <div class="blur-bg"></div>
     <img src="images/spinner.gif" />
   </div>
@@ -48,6 +49,7 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/async/lib/async.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="js/app.js"></script>

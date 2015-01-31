@@ -4,9 +4,20 @@
   		<p>{{message}}</p>
   		<core-icon icon="clear" ng-click="removeMessage()"></core-icon>
   	</div>
-    <div class="col-sm-3 manga-cover-image" ng-repeat="series in newManga" style="background-image:url(http://l.mfcdn.net/store/manga/{{series.rel}}/cover.jpg)">
-      <a ui-sref="series({link: series.link, title: series.title, id: series.id})"></a>
-      <div class="overlay"><h2>{{series.title}}</h2></div>
+    <div class="col-sm-3 manga-cover-image flip-container animation" ng-repeat="series in newManga">
+		<a ui-sref="series({link: series.link, title: series.title, id: series.id})"></a>
+		<div class="flipper">
+			<div class="front" style="background-image:url(http://l.mfcdn.net/store/manga/{{series.rel}}/cover.jpg)">
+			</div>
+			<div class="back" style="background-image:url(http://l.mfcdn.net/store/manga/{{series.rel}}/cover.jpg)">
+				<div class="info">
+					<h2>{{series.title}}</h2>
+				</div>
+			</div>
+		</div>
+
+      <!-- 
+      <div class="overlay"></div> -->
     </div>
   </div>
 </div>

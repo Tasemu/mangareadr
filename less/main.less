@@ -1,6 +1,7 @@
 @asphalt: #34495e;
 @clouds: #ecf0f1;
 @midnightblue: #2c3e50;
+@darkerthanblue: #1b2632;
 
 h1, h2, h3, h4, h5 {
 	font-family: 'Arvo', serif;
@@ -9,6 +10,16 @@ h1, h2, h3, h4, h5 {
 h1 {
 	font-size: 22px;
 	margin: 0;
+}
+
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	margin-top: 15px;
+}
+
+body {
+	background: @clouds;
 }
 
 core-toolbar {
@@ -69,6 +80,33 @@ core-toolbar {
 	bottom: 0;
 	background: @asphalt;
 	z-index: 100;
+
+	// &.animation {
+	// 	&.ng-hide {
+	// 		opacity: 0;
+	// 	}
+
+	// 	&.ng-hide-add, &.ng-hide-remove {
+	// 		-webkit-transition: 1s linear all;
+	// 		transition: 1s linear all;
+	// 		opacity: 1;
+	// 		display: block !important;
+	// 	}
+	// }
+
+	&.animation.ng-hide-add,
+	&.animation.ng-hide-remove {
+	  /* remember to add this */
+	  display:block!important;
+	  opacity:1;
+	}
+	&.animation.ng-hide {
+	  opacity:0;
+	}
+	&.animation.ng-hide-add {
+		-webkit-transition:0.23s linear all;
+	  	transition:0.23s linear all;
+	}
 
 	> .blur-bg {
 		box-shadow: 0 0 200px #fff;
